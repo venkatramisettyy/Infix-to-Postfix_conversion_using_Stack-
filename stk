@@ -1,0 +1,63 @@
+public class Stack 
+	{
+			public char array[];
+			public int top;
+			public int length;
+
+			Stack(int dim) {
+			//initialize array
+			array = new char[dim]; 
+
+			//no of elements in the array
+			length = dim; 
+
+			//initializing value for 'top'
+			top = -1;
+			}
+
+			public void push(char ch) {
+				//check if stack is full
+				if(isFull()) {
+				   System.out.println("Stack Full");
+				   System.exit(1);
+				}
+
+				top = top+1;
+				array[top] = ch;
+				}
+
+			public void pop() {
+				//check if stack is empty
+				if(isEmpty()) {
+				System.out.println("Stack Empty");
+				System.exit(1);
+				}
+
+				top = top - 1;
+				}
+			
+			public char peek()
+			{
+
+				return array[top];
+			}
+
+			public boolean isFull() 
+			{
+			return top==(length-1);
+			}
+
+			public boolean isEmpty() 
+			{
+			return top==-1;
+			}
+
+			public void displayStack() 
+			{
+			for (int i=0;i<=top;i++) 
+			{
+			System.out.println(array[i]);
+			}
+		}
+
+}
